@@ -1,22 +1,13 @@
 # Specific settings for client on Redhat distribution.
 class nfs::client::redhat inherits nfs::base {
-
+  
   package { 'nfs-utils':
     ensure => present,
   }
 
   if versioncmp($::operatingsystemmajrelease, '6') == 0 {
 
-    package {'rpcbind':
-      ensure => present,
-    }
-
-    service {'rpcbind':
-      ensure    => running,
-      enable    => true,
-      hasstatus => true,
-      require   => [Package['rpcbind'], Package['nfs-utils']],
-    }
+    include rpcbind    
 
   } else {
 

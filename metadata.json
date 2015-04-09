@@ -11,6 +11,10 @@
     {
       "name": "puppetlabs/concat",
       "version_requirement": ">=1.0.0 <2.0.0"
+    },
+    {
+    "name":"desalvo/rpcbind",
+    "version_requirement":">= 0.1.0"
     }
   ],
   "requirements": [
